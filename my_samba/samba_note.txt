@@ -1,0 +1,23 @@
+# Linux側の話
+sambaでユーザーを登録するには、事前にlinux側にもユーザー登録が必要
+
+pdbeditを使ってsambaユーザーを追加
+
+globalでbrowsable = noにしておかないと
+ユーザーフォルダまで共有フォルダとして見えてしまう
+
+globalでincludeしたものだけ別設定にすることが可能
+（あるユーザーにはフォルダを見せる事すらしたくない場合）
+（アクセスできなかったとしても存在すら見せたくないとかあるので）
+
+
+# Windows側の話
+net use "\\192.168.1.99" /user:ryo ryo
+で明示的にユーザーを指定してアクセス
+
+cmdで
+net useで確認した後
+net use <name> /delete
+して
+klist purge
+で消せる

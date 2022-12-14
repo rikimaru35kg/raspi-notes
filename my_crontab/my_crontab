@@ -1,0 +1,1 @@
+0 3 * * * /home/pi/my_crontab/rsync_hdd.sh
