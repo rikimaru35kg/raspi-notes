@@ -18,8 +18,34 @@
    netbios name = [使用したい名前]
 ```
 
+## ログを取りたい場合
+ログを取りたいフォルダの設定のところで、
+以下を追加する
+```
+   vfs objects = full audit
+   full_audit:facility = local1
+   full_audit:prefix = %u|%m|%I|%S
+   full_audit:failure = connect
+   full_audit:success = connect disconnect mkdir rmdir pwrite rename unlink
+```
+忘れずにbashでsmbdとnmbdを再起動する。
+```
+sudo systemctl restart smbd
+sudo systemctl restart nmbd
+```
+
+更に/etc/rsyslog.confに以下を追加することで、local1の書き込みファイルを/var/log/samba/audit.logに設定することができる。
+```
+local1.* /var/log/samba/audit.log
+local1.none;\
+```
+最後にbashで次のコマンドを打つと、ログが開始される。
+```
+/etc/init.d/rsyslog restart
+```
+
 ## 社内NWなど、認証なし接続が許可されていない場合
-`workgroup`を念のためWindows側に合わせた上で、
+workgroupの名前を念のためWindows側に合わせた上で、
 ```
 #   map to guest = bad user
 ```
