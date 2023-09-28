@@ -1,0 +1,10 @@
+authtoken: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+tunnels:
+   openvpn:
+     proto: tcp
+     addr: 443
+   zucamera:
+     proto: http
+     addr: 8080
+
