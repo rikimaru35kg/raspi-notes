@@ -20,7 +20,7 @@ Modify /boot/config.txt
 ```
 hdmi_force_hotplug:0=1
 hdmi_group=2
-hdmi_mode=82
+hdmi_mode=82  # 720pなので画面が小さいが、raspiのScreen Settingから大解像度を選んだら結局VNCでも大きくすることができた
 dtoverlay=vc4-fkms-v3d
 dtparam=act_led_trigger=timer
 dtparam=pwr_led_triger=mmc0
