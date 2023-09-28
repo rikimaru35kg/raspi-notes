@@ -42,7 +42,7 @@ Webページ見ながら焼けば難しい事はない
 - openvpnのユーザー設定ファイルでは、remote行にngrokのアドレス＆ポートを記載する。（ngrokは443で待ち受けていて、ngrokが443につなぐ。openvpn側でも設定ファイルに記載のアドレスからしか受け付けないという仕組み）
 
 # ngrokの設定
-- 実はここが最難関だった・・・（最新バージョンだとなぜかエラーがでる）
+- 超単純なはずのここが実は最難関だった・・・（最新バージョンだとなぜかエラーがでる）
 - [ngrok releases](https://dl.equinox.io/ngrok/ngrok/stable/archive)のversion2.2.8のARM64の.TAR.GZをダウンロードしてラズパイに送ってあげる
 - 解凍してできたngrokディレクトリを/usr/local/bin/にコピーして終わり（参考サイト: [【Raspberry Pi】ngrokのインストールからローカル環境の公開まで](https://qiita.com/sunaga70/items/6821772a9bcbdbbc2c03)）
 - ngrokにはGoogleアカウント（35kg）でログインする。authtokenをコピーして、`ngrok authtoken [authtoken]`でymlファイルに書き込む。ymlファイルは、今回は~/.ngrok2/の下にあった。最新バージョンだと.configの下にあるので要注意
@@ -50,14 +50,15 @@ Webページ見ながら焼けば難しい事はない
 - 最後に、openvpnの設定ファイルにngrokのtcpアドレスとポート番号を記載してあげるのを忘れずに
 - 参考に、ymlファイルを本プロジェクトにも載せておく
 
-# mjpg-streamerに続く・・・
+# mjpg-streamer
+- こちらのサイトが神がかってわかりやすい [Raspberry PiでMJPG-Streamerを使って監視カメラを作ってみよう](https://ponkichi.blog/mjpg-streamer/#st-toc-h-3)
+- 今回は設定でハマる事はなかったが、詳しく記載があるので、何かと役に立ちそう
+- 自分で苦しんで発見したopencvとmjpg-streamerの共有方法も載っている
 
 # gitの設定
 - gitのuser名やメールアドレスなどは消えているはずなので再度登録
 - githubへの公開鍵再登録も必要になる
-- これはgitを使おうとした際に自然と必要になるので、慌ててやる必要はない
+- これらはgitを使おうとした際に自然と必要になるので、慌ててやる必要はない
 
-
-
-
-
+# その他
+- PC側のvscodeからSSH接続して作業すると色々捗る
