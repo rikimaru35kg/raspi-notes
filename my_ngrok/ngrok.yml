@@ -1,10 +1,11 @@
-authtoken: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-
+authtoken: 2Cuemn99niyeHRRosaIpokCWC1R_ek6sqPp3esy2Pj91B9B9
 tunnels:
-   openvpn:
-     proto: tcp
-     addr: 443
-   zucamera:
-     proto: http
-     addr: 8080
-
+    openvpn:
+        proto: tcp
+        addr: 443
+    zucamera:
+        proto: http
+        hostname: adder-wise-boxer.ngrok-free.app
+        addr: 8080
+# region: jp
+version: "2"
