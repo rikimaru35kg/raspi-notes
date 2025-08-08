@@ -1,4 +1,4 @@
-authtoken: 2Cuemn99niyeHRRosaIpokCWC1R_ek6sqPp3esy2Pj91B9B9
+authtoken: <my authtoken>
 tunnels:
     openvpn:
         proto: tcp
