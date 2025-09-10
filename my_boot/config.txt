@@ -84,3 +84,7 @@ otg_mode=1
 arm_boost=1
 
 [all]
+
+# IF THERE IS THIS LINE, PLEASE COMMENT OUT!!
+# disable_fw_kms_setup=1
+
